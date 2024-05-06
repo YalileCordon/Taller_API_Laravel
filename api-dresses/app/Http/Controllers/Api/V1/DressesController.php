@@ -1,5 +1,4 @@
 <?php
-
 namespace App\Http\Controllers\Api\V1;
 
 use App\Models\Dresses;
@@ -10,48 +9,31 @@ use Symfony\Component\HttpFoundation\Response;
 
 class DressesController extends Controller
 {
-    /**
-     * Display a listing of the resource.
-     */
     public function index()
     {
         return Dresses::all();
     }
 
-    /**
-     * Store a newly created resource in storage.
-     */
-
     public function store(DressesRequest $request)
     {
-        $new_dress = new Dresses($request->all());
-        $new_dress->save();
-        return response()->json(['ok' => true, Response::HTTP_CREATED]);
+        $new_dress = Dresses::create($request->all());
+        return response()->json(['ok' => true], Response::HTTP_CREATED);
     }
 
-    /**
-     * Display the specified resource.
-     */
-    public function show(Dresses $dresses)
+    public function show(Dresses $dress)
     {
-        //
+        return $dress;
     }
 
-    /**
-     * Update the specified resource in storage.
-     */
-    public function update(DressesRequest $request, Dresses $dresses)
+    public function update(DressesRequest $request, Dresses $dress)
     {
-        $dresses->update($request->all());
+        $dress->update($request->all());
         return response()->json(['ok' => true], Response::HTTP_OK);
     }
 
-    /**
-     * Remove the specified resource from storage.
-     */
-    public function destroy(Dresses $dresses)
+    public function destroy(Dresses $dress)
     {
-        $dresses->delete();
-        return response()->json(['deleted' => true, Response::HTTP_ACCEPTED]);
+        $dress->delete();
+        return response()->json(['deleted' => true], Response::HTTP_ACCEPTED);
     }
 }
