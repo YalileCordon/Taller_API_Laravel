@@ -1,0 +1,167 @@
+{
+	"info": {
+		"_postman_id": "3b51a83a-fdb9-4c22-a9e9-66e2413b95d9",
+		"name": "Api Adresses",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "21287786"
+	},
+	"item": [
+		{
+			"name": "Get All adresses",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8000/api/dresses",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8000",
+					"path": [
+						"api",
+						"dresses"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get All Adresses V1",
+			"protocolProfileBehavior": {
+				"disabledSystemHeaders": {}
+			},
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8000/api/v1/dresses",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8000",
+					"path": [
+						"api",
+						"v1",
+						"dresses"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Update",
+			"request": {
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "    {\r\n        \"name\": \"Mabel Lindgren\",\r\n        \"size\": \"Small\",\r\n        \"color\": \"Chocolate\",\r\n        \"material\": \"Cotton\",\r\n        \"gender\": \"Male\",\r\n        \"origin\": \"Niue\",\r\n        \"description\": \"Facilis illum perspiciatis et sed ex laborum facilis. Et voluptas quos consequatur. Sed pariatur voluptatem est nobis sit.\",\r\n        \"price\": 68.66,\r\n        \"quantity\": 22,\r\n        \"designer\": \"Victoria Hessel IV\",\r\n        \"status\": 1,\r\n        \"manufacturing_date\": \"2023-10-28 07:40:40\"\r\n    }",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8000/api/v1/dresses/2",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8000",
+					"path": [
+						"api",
+						"v1",
+						"dresses",
+						"2"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get one dresses",
+			"request": {
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "    {\r\n        \"name\": \"Mabel Lindgren\",\r\n        \"size\": \"Small\",\r\n        \"color\": \"Chocolate\",\r\n        \"material\": \"Cotton\",\r\n        \"gender\": \"Male\",\r\n        \"origin\": \"Niue\",\r\n        \"description\": \"Facilis illum perspiciatis et sed ex laborum facilis. Et voluptas quos consequatur. Sed pariatur voluptatem est nobis sit.\",\r\n        \"price\": 68.66,\r\n        \"quantity\": 22,\r\n        \"designer\": \"Victoria Hessel IV\",\r\n        \"status\": 1,\r\n        \"manufacturing_date\": \"2023-10-28 07:40:40\"\r\n    }",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8000/api/v1/dresses/2",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8000",
+					"path": [
+						"api",
+						"v1",
+						"dresses",
+						"2"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Delete Adresses",
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8000/api/v1/dresses/34",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8000",
+					"path": [
+						"api",
+						"v1",
+						"dresses",
+						"34"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "New Request",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n        \"name\": \"Mrs. Bria Aufderhar III\",\r\n        \"email\": \"magali.rath@example.org\",\r\n        \"password\": \"password\"\r\n      }",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8000/api/login",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8000",
+					"path": [
+						"api",
+						"login"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
