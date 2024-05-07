@@ -21,9 +21,22 @@ class DressesController extends Controller
     */
     public function store(DressesRequest $request)
     {
+        $newModel = Dresses::create([
+            'name' => $request.name,
+            'size' => ,
+            'color' => ,
+            'material' => ,
+            'gender' => ,
+            'origin' => ,
+            'description' => ,
+            'price' => ,
+            'quantity' => ,
+            'designer' => ,
+            'status' => ,
+            'manufacturing_date' => ,
+          ]);
+        $newModel->save();
         return response()->json(['ok' => true], Response::HTTP_CREATED);
-        // Dresses::create($request->all());
-        // return response()->json(['ok' => true], Response::HTTP_CREATED);
     }
 
     public function show(Dresses $dress)
