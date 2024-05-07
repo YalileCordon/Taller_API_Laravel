@@ -2,19 +2,25 @@
 
 namespace Database\Factories;
 
+use App\Models\Category;
+use App\Models\Dresses;
 use Illuminate\Database\Eloquent\Factories\Factory;
 
-/**
- * @extends \Illuminate\Database\Eloquent\Factories\Factory<\App\Models\Dresses>
- */
 class DressesFactory extends Factory
 {
     /**
+     * The name of the factory's corresponding model.
+     *
+     * @var string
+     */
+    protected $model = Dresses::class;
+
+    /**
      * Define the model's default state.
      *
-     * @return array<string, mixed>
+     * @return array
      */
-    public function definition(): array
+    public function definition()
     {
         return [
             'name' => $this->faker->name,
@@ -31,4 +37,19 @@ class DressesFactory extends Factory
             'manufacturing_date' => $this->faker->dateTimeBetween('-1 year', 'now'),
         ];
     }
+
+    /**
+     * Indicate that the dress belongs to a category.
+     *
+     * @return \Illuminate\Database\Eloquent\Factories\Factory
+     */
+    public function withCategory()
+    {
+        return $this->afterCreating(function (Dresses $dresses) {
+            $category = Category::factory()->create();
+            $dresses->category_id = $category->id;
+            $dresses->save();
+        });
+    }
 }
+
