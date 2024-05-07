@@ -25,6 +25,7 @@ return new class extends Migration
             $table->string('designer');
             $table->boolean('status');
             $table->timestamp('manufacturing_date');
+            $table->foreignId('category_id')->constrained('category');
             $table->timestamps();
         });
     }
