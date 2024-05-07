@@ -35,7 +35,13 @@ class DressesFactory extends Factory
             'designer' => $this->faker->name,
             'status' => $this->faker->boolean(100), 
             'manufacturing_date' => $this->faker->dateTimeBetween('-1 year', 'now'),
+            'category_id' => function() {
+                return Category::all()->random()->id;
+            },
         ];
+
+
+        
     }
 
     /**
@@ -43,13 +49,17 @@ class DressesFactory extends Factory
      *
      * @return \Illuminate\Database\Eloquent\Factories\Factory
      */
-    public function withCategory()
-    {
-        return $this->afterCreating(function (Dresses $dresses) {
-            $category = Category::factory()->create();
-            $dresses->category_id = $category->id;
-            $dresses->save();
-        });
-    }
+    // public function withCategory()
+    // {
+    //     return $this->afterCreating(function (Dresses $dresses) {
+    //         $category = Category::factory()->create();
+    //         $dresses->category_id = $category->id;
+    //         $dresses->save();
+    //     });
+    // }
+
+
 }
+
+
 

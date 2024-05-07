@@ -22,7 +22,16 @@ class CategoryController extends Controller
 
     public function show(Category $category)
     {
-        return $category;
+        $dressesController = new DressesController();
+        $dresses = $dressesController->index();
+        $categoryDress = $dresses->where('category_id', $category->id);
+        $data = [
+            'category' => $category,
+            'dresses' => $categoryDress
+            
+        ];
+    
+        return response()->json($data);
     }
 
     public function update(Request $request, Category $category)
