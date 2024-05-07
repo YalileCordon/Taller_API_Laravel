@@ -51,13 +51,13 @@
 			"response": []
 		},
 		{
-			"name": "Update",
+			"name": "Post Category",
 			"request": {
-				"method": "PUT",
+				"method": "POST",
 				"header": [],
 				"body": {
 					"mode": "raw",
-					"raw": "    {\r\n        \"name\": \"Mabel Lindgren\",\r\n        \"size\": \"Small\",\r\n        \"color\": \"Chocolate\",\r\n        \"material\": \"Cotton\",\r\n        \"gender\": \"Male\",\r\n        \"origin\": \"Niue\",\r\n        \"description\": \"Facilis illum perspiciatis et sed ex laborum facilis. Et voluptas quos consequatur. Sed pariatur voluptatem est nobis sit.\",\r\n        \"price\": 68.66,\r\n        \"quantity\": 22,\r\n        \"designer\": \"Victoria Hessel IV\",\r\n        \"status\": 1,\r\n        \"manufacturing_date\": \"2023-10-28 07:40:40\"\r\n    }",
+					"raw": "{\r\n    \"name\": \"Viva\"\r\n}",
 					"options": {
 						"raw": {
 							"language": "json"
@@ -65,7 +65,7 @@
 					}
 				},
 				"url": {
-					"raw": "http://localhost:8000/api/v1/dresses/2",
+					"raw": "http://localhost:8000/api/v1/category/1",
 					"protocol": "http",
 					"host": [
 						"localhost"
@@ -74,8 +74,8 @@
 					"path": [
 						"api",
 						"v1",
-						"dresses",
-						"2"
+						"category",
+						"1"
 					]
 				}
 			},
@@ -135,7 +135,7 @@
 			"response": []
 		},
 		{
-			"name": "New Request",
+			"name": "Login",
 			"request": {
 				"method": "POST",
 				"header": [],
@@ -158,6 +158,68 @@
 					"path": [
 						"api",
 						"login"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get by ID",
+			"request": {
+				"method": "GET",
+				"header": []
+			},
+			"response": []
+		},
+		{
+			"name": "Get All Category",
+			"request": {
+				"method": "GET",
+				"header": []
+			},
+			"response": []
+		},
+		{
+			"name": "Category all",
+			"request": {
+				"method": "GET",
+				"header": []
+			},
+			"response": []
+		},
+		{
+			"name": "Show products by category",
+			"request": {
+				"method": "GET",
+				"header": []
+			},
+			"response": []
+		},
+		{
+			"name": "Post Dresses",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": " {\r\n        \"name\": \"Melba Kreiger MMM\",\r\n        \"size\": \"Large\",\r\n        \"color\": \"OliveDrab\",\r\n        \"material\": \"Wool\",\r\n        \"gender\": \"Male\",\r\n        \"origin\": \"Morocco\",\r\n        \"description\": \"Deserunt vel iure rerum sit soluta. Reprehenderit rerum ipsum nisi. Cupiditate sed et excepturi veniam facilis repudiandae vitae. Eligendi et consectetur delectus et mollitia repellat similique.\",\r\n        \"price\": 54.35,\r\n        \"quantity\": 10,\r\n        \"designer\": \"Juliana Hill\"\r\n    }",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8000/api/v1/dresses",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8000",
+					"path": [
+						"api",
+						"v1",
+						"dresses"
 					]
 				}
 			},
